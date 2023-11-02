@@ -56,17 +56,9 @@ Following are the screen screenshot of the Raft Algorithm running on the Multi-M
 
 In this screenshot, we can see three distinct outputs, in the first output; we see 172.31.21.230 Node as the leader. In the second output; the leader node went down. Meanwhile an election took place & 172.31.23.27 was elected as the leader using the voting mechanism. The node that gets the most votes get to be the leader. In the third output; the ex-leader went up but was not considered a leader.
 
-
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image1.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
 ![alt_text](images/image1.png "image_tooltip")
 
-
-
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image2.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
+### <span style="text-decoration:underline;">2nd Screenshot:</span>
+In the attached screenshot below, The output depicts that the cluster has three nodes currently connected.
 
 ![alt_text](images/image2.png "image_tooltip")
