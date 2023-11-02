@@ -1,54 +1,48 @@
 # Deploying-Kubernetes-Multi-Master-Nodes-Using-Raft-Algorithm
 
-This report outlines the approach taken to deploy a Kubernetes Multi-Master Nodes with the Raft algorithm for leader election. The deployment was carried out on a cloud provider on acloudguru platform, leveraging various Kubernetes components and configurations to ensure scalability, high availability, and security. The project successfully has utilized key technology like Horizontal Pod Autoscaling (HPA).
+## Executive Summary:
+
+This report outlines the approach taken to deploy a Kubernetes Multi-Master Nodes with the Raft algorithm for leader election. The deployment was carried out on a cloud provider on acloudguru platform, leveraging various Kubernetes components and configurations to ensure scalability, high availability, and security.
 
 
-## <span style="text-decoration:underline;">Introduction:</span>
+## Introduction:
 
-The objective of this project was to deploy a WordPress application using Kubernetes with a focus on high availability and reliability. To achieve this, we opted for a Multi-Master Node setup with the Raft algorithm to ensure that only one leader operates at any given time. The deployment was conducted on a cloud provider with the following **specifications**:
+The objective of this project was to deploy a Kubernetes with a focus on high availability and reliability. To achieve this, we opted for a Multi-Master Node setup with the Raft algorithm to ensure that only one leader operates at any given time. The deployment was conducted on a cloud provider with the following **specifications**:
 
 
 
 * Number of Nodes: 3 (1 Master Nodes and 2 Worker Nodes)
-* Minimum Pods per Application: 2
-* Maximum Pods per Application: 10
-* Pod Size: 512MB, 1 vCPU
-* Node Size: 2GB
-* Target CPU for HPA: 80%
-* Target Memory for HPA: 80%
+* Raft Algorithm Output Demonstration
 
 
 ## Approach:
 
-
-
 1. Setting Up Kubernetes Cluster:
 
-We initiated a Kubernetes cluster on our chosen cloud provider with 3 Master Nodes and 3 Worker Nodes. This ensured redundancy and high availability for our Nodes services.
-
-
+I initiated a Kubernetes cluster on our chosen cloud provider with 1 Master Nodes and 2 Worker Nodes. This ensured redundancy and high availability for the Nodes services.
 
 2. Raft Algorithm Configuration:
 
-To implement the Raft algorithm for leader election, we configured Kubernetes Multi-Master Nodes. This allows only one master node to act as the leader, ensuring a single point of control.
-
-
+To implement the Raft algorithm for leader election, I configured Kubernetes Multi-Master Nodes. This allows only one master node to act as the leader, ensuring a single point of control.
 
 3. Deploying the overlay network:
 
 I used Flannel as the overlay network. For establishing communication between the nodes.
 
+4. Monitoring and Logging:
+
+I set up monitoring and logging solutions to keep track of the cluster's health and performance. This includes metrics, logs, and alerts to proactively address any issues.
+
+## Results:
+
+The deployment of Kubernetes Multi-Master Nodes with the Raft algorithm ensured availability, Scalability, Security, Redundancy and Monitoring
+
+Following are the screen screenshot of the Raft Algorithm running on the Multi-Master Node:
 
 
-4. Horizontal Pod Autoscaling (HPA):
+### Screenshot 1:
 
-HPA was implemented with a target CPU and memory utilization of 80%. This ensures that the application scales dynamically based on demand, optimizing resource usage.
-
-
-
-5. Monitoring and Logging:
-
-We set up monitoring and logging solutions to keep track of the cluster's health and performance. This includes metrics, logs, and alerts to proactively address any issues.
+In this screenshot, we can see three distinct outputs, in the first output; we see 172.31.21.230 Node as the leader. In the second output; the leader node went down. Meanwhile an election took place & 172.31.23.27 was elected as the leader using the voting mechanism. The node that gets the most votes get to be the leader. In the third output; the ex-leader went up but was not considered a leader.
 
 
 ## <span style="text-decoration:underline;">Results:</span>
