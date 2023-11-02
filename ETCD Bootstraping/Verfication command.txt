@@ -1,0 +1,41 @@
+sudo ETCDCTL_API=3 etcdctl member list \
+  --endpoints=https://127.0.0.1:2379 \
+  --cacert=/etc/etcd/ca.pem \
+  --cert=/etc/etcd/kubernetes.pem \
+  --key=/etc/etcd/kubernetes-key.pem
+  
+  
+  
+  
+  sudo ETCDCTL_API=3 etcdctl put mykey "this is awesome" \
+  --endpoints=https://127.0.0.1:2379 \
+  --cacert=/etc/etcd/ca.pem \
+  --cert=/etc/etcd/kubernetes.pem \
+  --key=/etc/etcd/kubernetes-key.pem
+  
+  
+    sudo ETCDCTL_API=3 etcdctl elect one p1 \
+  --endpoints=https://127.0.0.1:2379 \
+  --cacert=/etc/etcd/ca.pem \
+  --cert=/etc/etcd/kubernetes.pem \
+  --key=/etc/etcd/kubernetes-key.pem
+  
+  
+ 
+  
+sudo ETCDCTL_API=3 etcdctl --endpoints=https://172.31.21.230:2379,https://172.31.23.37:2379,https://172.31.18.42:2379  \
+  --cacert=/etc/etcd/ca.pem \
+  --cert=/etc/etcd/kubernetes.pem \
+  --key=/etc/etcd/kubernetes-key.pem member list -w table
+  
+sudo ETCDCTL_API=3 etcdctl endpoint status --write-out=table \
+  --endpoints=https://127.0.0.1:2379 \
+  --cacert=/etc/etcd/ca.pem \
+  --cert=/etc/etcd/kubernetes.pem \
+  --key=/etc/etcd/kubernetes-key.pem
+  
+  
+ Reference: https://learnk8s.io/etcd-kubernetes
+  
+  Checking Leader Status
+  sudo ETCDCTL_API=3 etcdctl --endpoints=https://172.31.21.230:2379,https://172.31.23.37:2379,https://172.31.18.42:2379    --cacert=/etc/etcd/ca.pem   --cert=/etc/etcd/kubernetes.pem   --key=/etc/etcd/kubernetes-key.pem endpoint status --write-out=table

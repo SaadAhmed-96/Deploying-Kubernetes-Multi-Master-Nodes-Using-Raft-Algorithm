@@ -1,0 +1,4 @@
+ETCD_NAME=&lt;controller-0 or controller-1>
+INTERNAL_IP=$(curl http://169.254.169.254/latest/meta-data/local-ipv4)
+CONTROLLER_0_INTERNAL_IP=&lt;controller 0 private ip>
+CONTROLLER_1_INTERNAL_IP=&lt;controller 1 private ip>

@@ -1,0 +1,1 @@
+kubectl get componentstatuses --kubeconfig admin.kubeconfig

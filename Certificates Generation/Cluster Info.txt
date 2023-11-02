@@ -1,0 +1,24 @@
+Master1:
+3.138.61.118 - f8da2b88541c.mylabserver.com
+172.31.18.42
+
+Master2:
+3.145.44.117 - f8da2b88542c.mylabserver.com
+172.31.23.37
+
+Master3:
+18.116.13.214 - f8da2b88543c.mylabserver.com
+172.31.21.230
+
+Worker1:
+3.142.98.103 - f8da2b88544c.mylabserver.com
+172.31.21.177
+
+Worker2:
+3.133.144.134 - f8da2b88545c.mylabserver.com
+172.31.24.240
+
+
+Load Balancer:
+3.15.208.38 - f8da2b88546c.mylabserver.com
+172.31.29.189

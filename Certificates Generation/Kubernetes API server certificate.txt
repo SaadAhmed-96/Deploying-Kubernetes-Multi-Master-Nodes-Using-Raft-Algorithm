@@ -1,0 +1,30 @@
+{
+
+cat > kubernetes-csr.json << EOF
+{
+  "CN": "kubernetes",
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": [
+    {
+      "C": "US",
+      "L": "Portland",
+      "O": "Kubernetes",
+      "OU": "Kubernetes The Hard Way",
+      "ST": "Oregon"
+    }
+  ]
+}
+EOF
+
+cfssl gencert \
+  -ca=ca.pem \
+  -ca-key=ca-key.pem \
+  -config=ca-config.json \
+  -hostname=10.32.0.1,172.31.18.42,f8da2b88541c.mylabserver.com,172.31.23.37,f8da2b88542c.mylabserver.com,172.31.21.230,f8da2b88543c.mylabserver.com,172.31.29.189,f8da2b88546c.mylabserver.com,127.0.0.1,localhost,kubernetes.default \
+  -profile=kubernetes \
+  kubernetes-csr.json | cfssljson -bare kubernetes
+
+}

@@ -1,0 +1,56 @@
+{
+cat > f8da2b88544c.mylabserver.com-csr.json << EOF
+{
+  "CN": "system:node:f8da2b88544c.mylabserver.com",
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": [
+    {
+      "C": "US",
+      "L": "Portland",
+      "O": "system:nodes",
+      "OU": "Kubernetes The Hard Way",
+      "ST": "Oregon"
+    }
+  ]
+}
+EOF
+
+cfssl gencert \
+  -ca=ca.pem \
+  -ca-key=ca-key.pem \
+  -config=ca-config.json \
+  -hostname=172.31.18.24,f8da2b88544c.mylabserver.com \
+  -profile=kubernetes \
+  f8da2b88544c.mylabserver.com-csr.json | cfssljson -bare f8da2b88544c.mylabserver.com
+
+cat > f8da2b88545c.mylabserver.com-csr.json << EOF
+{
+  "CN": "system:node:f8da2b88545c.mylabserver.com",
+  "key": {
+    "algo": "rsa",
+    "size": 2048
+  },
+  "names": [
+    {
+      "C": "US",
+      "L": "Portland",
+      "O": "system:nodes",
+      "OU": "Kubernetes The Hard Way",
+      "ST": "Oregon"
+    }
+  ]
+}
+EOF
+
+cfssl gencert \
+  -ca=ca.pem \
+  -ca-key=ca-key.pem \
+  -config=ca-config.json \
+  -hostname=172.31.21.1,f8da2b88545c.mylabserver.com \
+  -profile=kubernetes \
+  f8da2b88545c.mylabserver.com-csr.json | cfssljson -bare f8da2b88545c.mylabserver.com
+
+}
